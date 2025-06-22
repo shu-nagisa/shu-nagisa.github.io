@@ -4,34 +4,75 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ゲストページ</title>
+  <!-- Google Fonts（明朝体） -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap" rel="stylesheet">
+  <!-- Swiper CSS（スライダー） -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <!-- 外部CSS -->
   <link rel="stylesheet" href="guest.css">
+  <style>
+    body {
+      text-align: center;
+      color: #545454;
+    }
+    .swiper {
+      padding-left: 10%;
+      padding-right: 10%;
+    }
+    .swiper-slide {
+      width: 80% !important;
+    }
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      background-color: #566a70;
+      color: #faf7ef;
+      font-size: 0.9em;
+      line-height: 1.6;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <h1 id="guestName"></h1>
+    <!-- ゲスト名 -->
+    <h1 id="guestName"> 様</h1>
+
+    <!-- メッセージ -->
     <p id="guestMessage"></p>
     <hr>
+
+    <!-- メモリー写真スライダー -->
     <div class="swiper">
       <div class="swiper-wrapper">
-        <!-- Slides will be inserted by JS -->
+        <!-- JSで画像を挿入 -->
       </div>
       <div class="swiper-pagination"></div>
     </div>
 
+    <!-- イラストダウンロードセクション -->
     <div class="section-title">イラスト画像ダウンロード</div>
     <div class="section-description">
       本日の思い出として、席次表に掲載のイラスト画像をダウンロードいただけます。<br>
       画像を長押しして「画像を保存」を選択してください。
     </div>
 
+    <!-- イラストサムネイル -->
     <div class="thumbnails">
-      <!-- Thumbnails will be inserted by JS -->
+      <!-- JSで挿入 -->
     </div>
   </div>
 
+  <!-- フッター -->
+  <footer>
+    <div>S＆N WEDDING PARTY</div>
+    <div>27 June, 2025</div>
+    <div>Seragaki Island Chapel</div>
+    <div>Hyatt Regency Seragaki Island, Okinawa</div>
+  </footer>
+
+  <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <!-- 外部JS -->
   <script src="guest.js"></script>
 </body>
 </html>
