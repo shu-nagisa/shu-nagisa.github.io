@@ -1,4 +1,4 @@
-// URLからdobを取得（例: ?dob=19900101）
+// URLからdobパラメータを取得
 const params = new URLSearchParams(window.location.search);
 const dob = params.get('dob');
 
@@ -10,14 +10,15 @@ if (!dob) {
     .then(guests => {
       const guest = guests.find(g => g.dob === dob);
       if (!guest) {
-        document.body.innerHTML = '<p>ゲスト情報が見つかりません。</p>';
+        document.body.innerHTML = '<p>ゲスト情報が見つかりませんでした。</p>';
         return;
       }
 
-      // 表示処理（従来通り）
+      // 名前とメッセージを反映
       document.getElementById('guestName').textContent = guest.name || "";
       document.getElementById('guestMessage').textContent = guest.message || "";
 
+      // スライダー画像挿入
       const sliderWrapper = document.querySelector('.swiper-wrapper');
       guest.memories.forEach(id => {
         const imgPath = `memories/${id}.jpg`;
@@ -30,6 +31,7 @@ if (!dob) {
         sliderWrapper.appendChild(slide);
       });
 
+      // サムネイル画像挿入
       const thumbContainer = document.querySelector('.thumbnails');
       guest.portraits.forEach((imgPath, index) => {
         const link = document.createElement('a');
@@ -42,13 +44,20 @@ if (!dob) {
         thumbContainer.appendChild(link);
       });
 
-      // Swiper起動
+      // Swiperスライダー初期化（自動再生）
       new Swiper('.swiper', {
         loop: true,
+        autoplay: {
+          delay: 3000, // 3秒ごと
+          disableOnInteraction: false
+        },
         pagination: {
           el: '.swiper-pagination',
           clickable: true
         }
       });
+    })
+    .catch(() => {
+      document.body.innerHTML = '<p>ゲスト情報の読み込みに失敗しました。</p>';
     });
 }
