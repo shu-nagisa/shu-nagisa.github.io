@@ -63,13 +63,17 @@ h2 {
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
+  background-color: transparent;
+  border-radius: 8px;
 }
 
 .swiper-slide img {
-  width: 100%;
+  width: auto;
   height: 100%;
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
-  border-radius: 8px;
+  display: block;
 }
 
 /* サムネイルブロック */
