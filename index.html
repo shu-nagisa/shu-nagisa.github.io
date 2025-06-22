@@ -1,16 +1,120 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <title>ゲスト認証</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>認証ページ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Noto Serif JP', serif;
+      background-color: #faf7ef;
+      background-image: url("https://www.transparenttextures.com/patterns/beige-paper.png");
+      background-repeat: repeat;
+      color: #545454;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+    .container {
+      max-width: 600px;
+      width: 100%;
+      padding: 40px 20px;
+      box-sizing: border-box;
+    }
+    h1 {
+      font-size: 1.8em;
+      color: #566a70;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1em;
+      margin-bottom: 20px;
+    }
+    input[type="text"] {
+      font-size: 1em;
+      padding: 10px;
+      width: 80%;
+      max-width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+    button {
+      background-color: #566a70;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    #error {
+      color: red;
+      margin-top: 10px;
+    }
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      background-color: #566a70;
+      color: #faf7ef;
+      font-size: 0.9em;
+      line-height: 1.6;
+    }
+    footer .main-title {
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+    footer .sub-info {
+      font-size: 0.85em;
+      margin-top: 5px;
+    }
+  </style>
 </head>
 <body>
-  <h1>ようこそ</h1>
-  <p>生年月日（8桁）を入力してください</p>
-  <input type="text" id="dob" placeholder="例：19900101" />
-  <button onclick="authenticate()">認証</button>
-  <p id="error" style="color:red;"></p>
+  <div class="container">
+    <h1>ようこそ</h1>
+    <p>ご自身の生年月日（8桁）を入力してください</p>
+    <input type="text" id="dob" placeholder="例：19900101" maxlength="8">
+    <br>
+    <button onclick="authenticate()">認証する</button>
+    <p id="error"></p>
+  </div>
 
-  <script src="auth.js"></script>
+  <footer>
+    <div class="main-title">S＆N WEDDING PARTY</div>
+    <div class="sub-info">27 June, 2025</div>
+    <div class="sub-info">Seragaki Island Chapel</div>
+    <div class="sub-info">Hyatt Regency Seragaki Island, Okinawa</div>
+  </footer>
+
+  <script>
+    function authenticate() {
+      const dob = document.getElementById('dob').value.trim();
+      const errorEl = document.getElementById('error');
+
+      if (!/^\d{8}$/.test(dob)) {
+        errorEl.textContent = '正しい8桁の生年月日を入力してください。';
+        return;
+      }
+
+      fetch('guests.json')
+        .then(res => res.json())
+        .then(guests => {
+          const guest = guests.find(g => g.dob === dob);
+          if (guest) {
+            window.location.href = `guest.html?dob=${dob}`;
+          } else {
+            errorEl.textContent = '該当するゲストが見つかりませんでした。';
+          }
+        })
+        .catch(() => {
+          errorEl.textContent = 'データの読み込みに失敗しました。';
+        });
+    }
+  </script>
 </body>
 </html>
