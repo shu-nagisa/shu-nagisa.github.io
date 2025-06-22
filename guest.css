@@ -38,10 +38,10 @@ h2 {
   font-size: 1rem;
 }
 
+/* Swiper スライダー設定 */
 .swiper {
   width: 100%;
   max-width: 600px;
-  padding: 0;
   box-sizing: border-box;
 }
 
@@ -57,65 +57,4 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: transparent;
-  border-radius: 8px;
-}
-
-.swiper-slide img {
-  width: 400px;
-  height: 400px;
-  object-fit: contain;
-  display: block;
-}
-
-@media (max-width: 500px) {
-  .swiper-wrapper {
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-}
-
-.thumbnails {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
-  padding: 1em;
-}
-
-.thumbnails img {
-  width: 120px;
-  height: 120px;
-  object-fit: contain;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.download-description {
-  font-size: 0.9rem;
-  text-align: center;
-  padding: 0 1em;
-  line-height: 1.5;
-}
-
-footer {
-  background-color: #566a70;
-  color: #faf7ef;
-  text-align: center;
-  padding: 1.5em 1em;
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  margin-top: auto;
-}
-
-footer .title {
-  font-size: 1.1rem;
-  font-weight: bold;
-  margin-bottom: 0.3em;
-}
-
-footer .subtitle {
-  font-size: 0.85rem;
-  line-height: 1.4;
-}
+  background-color: transparent
