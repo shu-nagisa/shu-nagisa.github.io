@@ -1,4 +1,3 @@
-// URLパラメータから生年月日を取得
 const params = new URLSearchParams(window.location.search);
 const dob = params.get('dob');
 
@@ -18,11 +17,9 @@ fetch('guests.json')
       return;
     }
 
-    // ゲスト名・メッセージ表示
     document.getElementById('guestName').textContent = guest.name + ' 様';
     document.getElementById('guestMessage').textContent = guest.message;
 
-    // メモリー画像のスライダー
     if (Array.isArray(guest.memories)) {
       const wrapper = document.querySelector('.swiper-wrapper');
       guest.memories.forEach(id => {
@@ -41,7 +38,7 @@ fetch('guests.json')
         loop: true,
         slidesPerView: 1,
         centeredSlides: true,
-        spaceBetween: 100, // ← 左右見切れ感
+        spaceBetween: 60,
         pagination: {
           el: '.swiper-pagination',
           clickable: true
@@ -53,7 +50,6 @@ fetch('guests.json')
       });
     }
 
-    // イラスト画像（4枚）
     if (Array.isArray(guest.portraits)) {
       const container = document.querySelector('.thumbnails');
       guest.portraits.forEach((path, index) => {
@@ -72,6 +68,4 @@ fetch('guests.json')
   })
   .catch(error => {
     console.error('ゲスト情報の読み込みに失敗しました:', error);
-    document.getElementById('guestName').textContent = 'エラーが発生しました';
-    document.getElementById('guestMessage').textContent = 'ページが表示できませんでした。URLをご確認ください。';
-  });
+    document.getElementById('guestName').textCo
