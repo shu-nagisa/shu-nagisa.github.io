@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guest Page</title>
+  <!-- Google Fonts: Noto Serif JP (for Japanese serif font) -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Swiper CSS for slider -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <!-- Main CSS stylesheet -->
+  <link rel="stylesheet" href="guest.css">
+</head>
+<body>
+  <!-- Guest Name -->
+  <h1 id="guestName"></h1>
+  <!-- Guest Message (multi-line) -->
+  <p id="guestMessage"></p>
+  <!-- Separator line (accent-colored) -->
+  <hr>
+  <!-- Slider for memory photos -->
+  <div class="swiper"><!-- Swiper container -->
+    <div class="swiper-wrapper"><!-- Slides will be inserted here by JS --></div>
+    <!-- Pagination bullets (below slides) -->
+    <div class="swiper-pagination"></div>
+  </div>
+  <!-- Thumbnails for portrait illustrations -->
+  <div class="thumbnails"><!-- Portrait thumbnails inserted by JS --></div>
+
+  <!-- Swiper JS library (for slider functionality) -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <!-- Main JavaScript -->
+  <script src="guest.js"></script>
+</body>
+</html>
