@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>ようこそ 本郷 尚さん</title>
+</head>
+<body>
+  <h1>本郷 尚さんへ</h1>
+  <p>今日は来てくれてありがとうございます！</p>
+  <img src="/guests/images/19900101_1.png" alt="似顔絵" />
+  <br />
+  <a href="/guests//images/19900101.png" download>似顔絵をダウンロード</a>
+</body>
+</html>
