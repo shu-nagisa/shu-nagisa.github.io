@@ -1,24 +1,16 @@
-function authenticate() {
-  const dob = document.getElementById('dob').value.trim();
-  const errorEl = document.getElementById('error');
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>ゲスト認証</title>
+</head>
+<body>
+  <h1>ようこそ</h1>
+  <p>生年月日（8桁）を入力してください</p>
+  <input type="text" id="dob" placeholder="例：19900101" />
+  <button onclick="authenticate()">認証</button>
+  <p id="error" style="color:red;"></p>
 
-  if (!/^\d{8}$/.test(dob)) {
-    errorEl.textContent = '8桁の生年月日を入力してください。';
-    return;
-  }
-
-  // 誕生日に一致するゲストを探して、URLにクエリパラメータで渡す
-  fetch('guests.json')
-    .then(res => res.json())
-    .then(guests => {
-      const guest = guests.find(g => g.dob === dob);
-      if (guest) {
-        window.location.href = `guest.html?dob=${dob}`;
-      } else {
-        errorEl.textContent = '該当するゲストが見つかりませんでした。';
-      }
-    })
-    .catch(() => {
-      errorEl.textContent = 'データの読み込みに失敗しました。';
-    });
-}
+  <script src="auth.js"></script>
+</body>
+</html>
