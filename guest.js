@@ -44,11 +44,14 @@ if (!dob) {
         thumbContainer.appendChild(link);
       });
 
-      // Swiperスライダー初期化（自動再生）
+      // Swiperスライダー初期化（自動再生 + スライド幅調整）
       new Swiper('.swiper', {
         loop: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        spaceBetween: 10,
         autoplay: {
-          delay: 3000, // 3秒ごと
+          delay: 3000,
           disableOnInteraction: false
         },
         pagination: {
@@ -60,4 +63,3 @@ if (!dob) {
     .catch(() => {
       document.body.innerHTML = '<p>ゲスト情報の読み込みに失敗しました。</p>';
     });
-}
