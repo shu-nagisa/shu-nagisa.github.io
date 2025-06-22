@@ -46,13 +46,19 @@ h2 {
 .swiper {
   width: 100%;
   max-width: 600px;
-  padding: 16px 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.swiper-wrapper {
+  padding-left: 100px;
+  padding-right: 100px;
   box-sizing: border-box;
 }
 
 .swiper-slide {
-  width: 80%;
-  height: 200px;
+  width: 400px !important;
+  height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,13 +68,8 @@ h2 {
 .swiper-slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 8px;
-}
-
-.swiper-wrapper {
-  padding-left: 10%;
-  padding-right: 10%;
 }
 
 /* サムネイルブロック */
