@@ -1,141 +1,112 @@
+/* ベーススタイル */
 body {
   margin: 0;
-  font-family: 'Noto Serif JP', serif;
+  padding: 0;
   background-color: #faf7ef;
-  background-image: url("https://www.transparenttextures.com/patterns/beige-paper.png");
-  background-repeat: repeat;
+  font-family: 'Noto Serif JP', serif;
   color: #545454;
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
-  text-align: center;
-}
-
-.container {
   max-width: 600px;
-  width: 100%;
-  padding: 20px;
-  box-sizing: border-box;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin: 0 auto;
+  padding-bottom: 80px;
 }
 
+/* 共通テキスト設定 */
+h1, h2, p {
+  text-align: center;
+  margin: 1em 0;
+}
+
+/* 見出しスタイル */
 h1 {
+  font-size: 1.5rem;
   color: #566a70;
-  margin-bottom: 10px;
 }
 
+h2 {
+  font-size: 1.2rem;
+  color: #566a70;
+  border-bottom: 2px solid #566a70;
+  padding-bottom: 4px;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+}
+
+/* ゲストメッセージ */
 #guestMessage {
   white-space: pre-line;
-  padding: 0 10px 20px;
-  box-sizing: border-box;
-  font-size: 1em;
-  text-align: center;
+  padding: 0 1em;
+  line-height: 1.6;
 }
 
-hr {
-  border: none;
-  border-top: 1px solid #566a70;
-  width: 80%;
-  margin: 20px auto;
-}
-
+/* スライダー */
 .swiper {
   width: 100%;
-  margin-bottom: 20px;
+  max-width: 100%;
+  padding: 16px 0;
 }
 
 .swiper-slide {
-  width: 80% !important;
-  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .swiper-slide img {
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
+  width: 90%;
+  height: 160px;
+  object-fit: contain;
+  background-color: #000;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-.swiper-pagination {
-  --swiper-pagination-color: #566a70;
-}
-
-.section-title {
-  font-weight: bold;
-  color: #566a70;
-  margin-top: 30px;
-  position: relative;
-  padding-bottom: 10px;
-  text-align: center;
-}
-
-.section-title::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 5px;
-  background-color: #566a70;
-  opacity: 0.2;
-}
-
-.section-description {
-  margin-top: 10px;
-  color: #545454;
-  font-size: 0.95em;
-  line-height: 1.6;
-  text-align: center;
-}
-
+/* サムネイルブロック */
 .thumbnails {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 20px;
-}
-
-.thumbnails a {
-  width: 48%;
-  margin: 1%;
-  text-decoration: none;
+  gap: 8px;
+  padding: 1em;
 }
 
 .thumbnails img {
-  width: 100%;
-  height: auto;
-  border: 2px solid #566a70;
-  display: block;
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  background-color: #000;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
-@media (min-width: 768px) {
-  .thumbnails a {
-    width: 22%;
-  }
+/* テキスト説明 */
+.download-description {
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 0 1em;
+  line-height: 1.5;
 }
 
+/* フッター */
 footer {
-  padding: 20px;
   background-color: #566a70;
   color: #faf7ef;
-  font-size: 0.9em;
-  line-height: 1.6;
   text-align: center;
+  padding: 1.5em 1em;
+  position: relative;
+  bottom: 0;
   width: 100%;
+  margin-top: auto;
 }
 
-footer .main-title {
-  font-size: 1.2em;
+footer .title {
+  font-size: 1.1rem;
   font-weight: bold;
+  margin-bottom: 0.3em;
 }
 
-footer .sub-info {
-  font-size: 0.85em;
-  margin-top: 5px;
+footer .subtitle {
+  font-size: 0.85rem;
+  line-height: 1.4;
 }
