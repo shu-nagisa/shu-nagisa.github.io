@@ -4,6 +4,7 @@ const dob = params.get('dob');
 
 if (!dob) {
   document.getElementById('guestName').textContent = 'ゲスト情報が見つかりません';
+  document.getElementById('guestMessage').textContent = 'ページが表示できませんでした。URLをご確認ください。';
   throw new Error('dob パラメータが指定されていません');
 }
 
@@ -13,6 +14,7 @@ fetch('guests.json')
     const guest = data.find(item => item.dob === dob);
     if (!guest) {
       document.getElementById('guestName').textContent = 'ゲスト情報が見つかりません';
+      document.getElementById('guestMessage').textContent = 'ページが表示できませんでした。URLをご確認ください。';
       return;
     }
 
@@ -38,6 +40,9 @@ fetch('guests.json')
       // Swiper 初期化
       new Swiper('.swiper', {
         loop: true,
+        slidesPerView: 1,
+        centeredSlides: true,
+        spaceBetween: 20,
         pagination: {
           el: '.swiper-pagination',
           clickable: true
@@ -69,4 +74,5 @@ fetch('guests.json')
   .catch(error => {
     console.error('ゲスト情報の読み込みに失敗しました:', error);
     document.getElementById('guestName').textContent = 'エラーが発生しました';
+    document.getElementById('guestMessage').textContent = 'ページが表示できませんでした。URLをご確認ください。';
   });
