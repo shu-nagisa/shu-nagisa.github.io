@@ -1,14 +1,26 @@
 [
   {
-    "dob": "19580316",
-    "name": "本郷 尚",
-    "message": "今日は来てくれてありがとう！",
-    "image": "images/19900101.png"
+    "dob": "19900101",
+    "name": "田中 太郎",
+    "message": "今日は来てくれてありがとう！\nたくさん思い出を作ろうね。",
+    "memories": [1, 2, 3],
+    "portraits": [
+      "illust/19900101_1.png",
+      "illust/19900101_2.png",
+      "illust/19900101_3.png",
+      "illust/19900101_4.png"
+    ]
   },
   {
     "dob": "19951224",
-    "name": "ゲストB",
-    "message": "お越しいただき感謝しています！",
-    "image": "images/19951224.png"
+    "name": "山田 花子",
+    "message": "ようこそ！\n一緒に楽しもう！",
+    "memories": [1, 4, 5],
+    "portraits": [
+      "illust/19951224_1.png",
+      "illust/19951224_2.png",
+      "illust/19951224_3.png",
+      "illust/19951224_4.png"
+    ]
   }
 ]
