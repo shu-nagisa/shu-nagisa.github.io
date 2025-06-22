@@ -37,12 +37,11 @@ fetch('guests.json')
         wrapper.appendChild(slide);
       });
 
-      // Swiper 初期化
       new Swiper('.swiper', {
         loop: true,
         slidesPerView: 1,
         centeredSlides: true,
-        spaceBetween: 20,
+        spaceBetween: 100, // ← 左右見切れ感
         pagination: {
           el: '.swiper-pagination',
           clickable: true
