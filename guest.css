@@ -1,0 +1,91 @@
+/* Base styling */
+body {
+  margin: 0;
+  font-family: 'Noto Serif JP', serif;
+  background-color: #faf7ef;
+  /* Old paper texture background image (free seamless texture from TransparentTextures.com) */
+  background-image: url("https://www.transparenttextures.com/patterns/beige-paper.png");
+  background-repeat: repeat;
+  color: #545454;               /* base text color */
+  line-height: 1.6;
+}
+
+/* Heading (Guest Name) styling */
+#guestName {
+  text-align: center;
+  margin: 20px 0 10px;
+  font-size: 1.5em;
+  color: #566a70;               /* accent color for name */
+}
+
+/* Message text styling */
+#guestMessage {
+  white-space: pre-line;        /* preserve line breaks from JSON message */
+  padding: 0 15px;
+  box-sizing: border-box;
+  font-size: 1em;
+  /* (Uses base text color #545454) */
+}
+
+/* Horizontal rule separator (accent-colored line) */
+hr {
+  border: none;
+  border-top: 1px solid #566a70;
+  width: 80%;
+  margin: 20px auto;
+}
+
+/* Swiper slider container */
+.swiper {
+  width: 100%;
+  /* (height will adjust based on slide content) */
+  margin-bottom: 20px;          /* space below slider before thumbnails */
+}
+
+/* Swiper slides images should scale to container */
+.swiper-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Swiper pagination bullets styling (using CSS variables for Swiper) */
+.swiper-pagination {
+  --swiper-pagination-color: #566a70;           /* active bullet color (accent) */
+  --swiper-pagination-bullet-inactive-color: #c4c4c4;  /* inactive bullet color (gray) */
+  --swiper-pagination-bullet-width: 10px;
+  --swiper-pagination-bullet-height: 10px;
+}
+
+/* Thumbnail section */
+.thumbnails {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 10px 20px;
+  box-sizing: border-box;
+}
+
+/* Each thumbnail (anchor containing image) */
+.thumbnails a {
+  /* For mobile, two images per row (48% width each with margins) */
+  width: 48%;
+  margin: 1%;
+  text-decoration: none;
+}
+
+/* Thumbnail images styling */
+.thumbnails img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 2px solid #566a70;    /* accent-colored border around thumbnails */
+}
+
+/* Responsive: for larger screens, show 4 thumbnails in one row */
+@media (min-width: 768px) {
+  .thumbnails a {
+    width: 22%;
+    margin: 1%;
+  }
+}
