@@ -42,27 +42,30 @@ h2 {
   width: 100%;
   max-width: 600px;
   box-sizing: border-box;
+  overflow: hidden;
+  padding: 0 40px;
 }
 
 .swiper-wrapper {
-  box-sizing: border-box;
+  display: flex;
+  align-items: center;
 }
 
 .swiper-slide {
-  width: 80% !important;     /* 親幅の80% */
-  max-width: 400px;
+  flex-shrink: 0;
+  width: 400px !important;
   height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
   background-color: transparent;
   border-radius: 8px;
   overflow: hidden;
-  margin: 0 auto;
 }
 
 .swiper-slide img {
-  height: 100%;          /* 高さ400pxにフィット */
+  height: 100%;
   width: auto;
   max-width: 100%;
   object-fit: contain;
@@ -71,7 +74,7 @@ h2 {
 
 @media (max-width: 500px) {
   .swiper-slide {
-    width: 90% !important;   /* スマホは少し縮小してフィット感を出す */
+    width: 90% !important;
   }
 }
 
