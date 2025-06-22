@@ -6,7 +6,8 @@ body {
   background-repeat: repeat;
   color: #545454;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
   text-align: center;
 }
 
@@ -15,6 +16,7 @@ body {
   width: 100%;
   padding: 20px;
   box-sizing: border-box;
+  flex: 1;
 }
 
 h1 {
@@ -36,7 +38,6 @@ hr {
   margin: 20px auto;
 }
 
-/* Swiper スライダー */
 .swiper {
   width: 100%;
   padding-left: 10%;
@@ -59,7 +60,6 @@ hr {
   --swiper-pagination-color: #566a70;
 }
 
-/* セクション見出し */
 .section-title {
   font-weight: bold;
   color: #566a70;
@@ -79,9 +79,54 @@ hr {
   opacity: 0.2;
 }
 
-/* 説明テキスト */
 .section-description {
   margin-top: 10px;
   color: #545454;
   font-size: 0.95em;
-  line-he
+  line-height: 1.6;
+}
+
+.thumbnails {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.thumbnails a {
+  width: 48%;
+  margin: 1%;
+  text-decoration: none;
+}
+
+.thumbnails img {
+  width: 100%;
+  height: auto;
+  border: 2px solid #566a70;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .thumbnails a {
+    width: 22%;
+  }
+}
+
+footer {
+  padding: 20px;
+  background-color: #566a70;
+  color: #faf7ef;
+  font-size: 0.9em;
+  line-height: 1.6;
+  text-align: center;
+}
+
+footer .main-title {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+footer .sub-info {
+  font-size: 0.85em;
+  margin-top: 5px;
+}
