@@ -15,7 +15,7 @@ if (!dob) {
       }
 
       // 名前とメッセージを反映
-      document.getElementById('guestName').textContent = guest.name || "";
+      document.getElementById('guestName').textContent = (guest.name || "") + " 様";
       document.getElementById('guestMessage').textContent = guest.message || "";
 
       // スライダー画像挿入
