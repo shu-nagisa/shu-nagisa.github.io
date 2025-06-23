@@ -1,9 +1,13 @@
 const params = new URLSearchParams(window.location.search);
 const dob = params.get('dob');
 
-if (!dob) {
+function showGuestNotFound() {
   document.getElementById('guestName').textContent = 'ゲスト情報が見つかりません';
   document.getElementById('guestMessage').textContent = 'ページが表示できませんでした。URLをご確認ください。';
+}
+
+if (!dob) {
+  showGuestNotFound();
   throw new Error('dob パラメータが指定されていません');
 }
 
@@ -12,8 +16,7 @@ fetch('guests.json')
   .then(data => {
     const guest = data.find(item => item.dob === dob);
     if (!guest) {
-      document.getElementById('guestName').textContent = 'ゲスト情報が見つかりません';
-      document.getElementById('guestMessage').textContent = 'ページが表示できませんでした。URLをご確認ください。';
+      showGuestNotFound();
       return;
     }
 
@@ -29,6 +32,10 @@ fetch('guests.json')
         const img = document.createElement('img');
         img.src = `memories/${id}.jpg`;
         img.alt = `Memory ${id}`;
+        img.onerror = () => {
+          img.src = 'memories/fallback.jpg';
+          img.alt = '画像を読み込めませんでした';
+        };
 
         slide.appendChild(img);
         wrapper.appendChild(slide);
@@ -56,6 +63,7 @@ fetch('guests.json')
         const link = document.createElement('a');
         link.href = path;
         link.download = path.split('/').pop();
+        link.setAttribute('aria-label', `イラスト${index + 1}をダウンロード`);
 
         const img = document.createElement('img');
         img.src = path;
@@ -68,4 +76,5 @@ fetch('guests.json')
   })
   .catch(error => {
     console.error('ゲスト情報の読み込みに失敗しました:', error);
-    document.getElementById('guestName').textCo
+    showGuestNotFound();
+  });
