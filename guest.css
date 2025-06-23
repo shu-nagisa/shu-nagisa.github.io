@@ -7,11 +7,11 @@ body {
   align-items: center;
   max-width: 600px;
   margin: 0 auto;
-  padding-bottom: 80px;
+  padding-bottom: 0;
 }
 
 main.container {
-  padding: 1.5em 1em;
+  padding: 24px 16px 48px; /* 上24px, 左右16px, 下48px */
   width: 100%;
   box-sizing: border-box;
 }
@@ -153,13 +153,13 @@ footer .sub-info {
   }
 
   .thumbnails {
-    justify-content: center;
-    gap: 10px;
+    justify-content: space-between;
+    gap: 16px 8px;
   }
 
   .thumbnails img {
-    width: 45%;
+    width: calc(50% - 12px);
+    max-width: none;
     height: auto;
-    max-width: 120px;
   }
 }
