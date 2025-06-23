@@ -11,26 +11,28 @@ body {
 }
 
 main.container {
-  padding: 24px 16px 48px;
-  margin-top: 25px;
-  margin-bottom: 45px;
-  width: 100%;
+  padding: 25px 21px 45px;
+  width: calc(100% - 10px); /* 左右5pxの余白分 */
   box-sizing: border-box;
+  background-color: #ffffff;
   border: 3px solid #5ec4d6;
   border-radius: 12px;
-  background-color: #ffffffcc;
+  margin-bottom: 45px;
+  background-image: url('texture.png');
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center;
 }
 
 h1, h2, p {
   text-align: center;
   margin: 1em 0;
 }
-
 h1 {
+  margin-top: 0;
   font-size: 1.5rem;
   color: #566a70;
 }
-
 h2 {
   font-size: 1.2rem;
   color: #566a70;
@@ -53,6 +55,7 @@ h2 {
   text-align: center;
   margin-top: 2.5em;
   margin-bottom: 0.5em;
+  border-bottom: none;
 }
 
 .section-description {
@@ -132,26 +135,13 @@ footer {
 }
 
 footer .main-title {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: bold;
-  color: #ffffff;
-  background-color: #5ec4d6;
-  display: inline-block;
-  padding: 0.2em 0.8em;
-  border-radius: 20px;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.3em;
 }
-
 footer .sub-info {
   font-size: 0.85rem;
   line-height: 1.4;
-}
-
-footer .shisa-icon {
-  width: 80px;
-  height: auto;
-  margin: 1em auto 0;
-  display: block;
 }
 
 @media (max-width: 500px) {
