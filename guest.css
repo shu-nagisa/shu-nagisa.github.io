@@ -1,3 +1,7 @@
+from pathlib import Path
+
+# 最新のCSSを作成
+latest_css = """
 body {
   background-color: #faf7ef;
   font-family: 'Noto Serif JP', serif;
@@ -17,7 +21,7 @@ main.container {
   background-color: #ffffff;
   border: 3px solid #5ec4d6;
   border-radius: 12px;
-  margin-bottom: 45px;
+  margin: 25px auto 45px; /* 上部に25px追加 */
   background-image: url('texture.png');
   background-size: cover;
   background-repeat: repeat;
