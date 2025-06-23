@@ -10,6 +10,7 @@ body {
   padding-bottom: 0;
 }
 
+/* メインボックス */
 main.container {
   padding: 25px 21px 45px;
   width: 100%;
@@ -17,24 +18,46 @@ main.container {
   background-color: #ffffff;
   border: 3px solid #5ec4d6;
   border-radius: 12px;
-  margin-bottom: 45px;
   margin-top: 25px;
+  margin-bottom: 45px;
   background-image: url('texture.png');
   background-size: cover;
   background-repeat: repeat;
   background-position: center;
-  background-blend-mode: lighten;
+  position: relative;
+}
+
+/* テクスチャの透過レイヤー */
+main.container::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url('texture.png');
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center;
+  opacity: 0.1;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* テクスチャ上に載せる要素 */
+main.container > * {
+  position: relative;
+  z-index: 1;
 }
 
 h1, h2, p {
   text-align: center;
   margin: 1em 0;
 }
+
 h1 {
   margin-top: 0;
   font-size: 1.5rem;
   color: #566a70;
 }
+
 h2 {
   font-size: 1.2rem;
   color: #566a70;
@@ -50,6 +73,7 @@ h2 {
   font-size: 1rem;
 }
 
+/* セクションタイトル */
 .section-title {
   font-size: 1.1rem;
   font-weight: bold;
@@ -68,6 +92,7 @@ h2 {
   margin-bottom: 2em;
 }
 
+/* スライダー */
 .swiper {
   width: 100%;
   max-width: 600px;
@@ -104,16 +129,18 @@ h2 {
   border: 2px solid #e0e0e0;
 }
 
+/* サムネイル（PCは4列） */
 .thumbnails {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px 12px;
+  justify-items: center;
   padding: 0 1em;
   box-sizing: border-box;
   max-width: 100%;
 }
 
+/* 背景ボックス付きのイラスト */
 .thumbnails a {
   background-color: #ffffff;
   padding: 8px;
@@ -123,8 +150,9 @@ h2 {
 }
 
 .thumbnails img {
-  width: 120px;
-  height: 120px;
+  width: 100%;
+  max-width: 120px;
+  height: auto;
   object-fit: contain;
   border-radius: 8px;
   cursor: pointer;
@@ -136,13 +164,13 @@ h2 {
   transform: scale(1.05);
 }
 
+/* フッター */
 footer {
   background-color: #566a70;
   color: #faf7ef;
   text-align: center;
   padding: 1.5em 1em;
   width: 100%;
-  border-top: 3px solid #5ec4d6;
 }
 
 footer .main-title {
@@ -150,19 +178,17 @@ footer .main-title {
   font-weight: bold;
   margin-bottom: 0.3em;
 }
+
 footer .sub-info {
   font-size: 0.85rem;
   line-height: 1.4;
 }
 
+/* SPビュー調整 */
 @media (max-width: 500px) {
   body {
     padding-left: 20px;
     padding-right: 20px;
-  }
-
-  main.container {
-    width: 100%;
   }
 
   .swiper-slide {
@@ -180,15 +206,15 @@ footer .sub-info {
   }
 
   .thumbnails {
-    display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px 12px;
-    justify-items: center;
   }
 
   .thumbnails img {
-    width: 100%;
-    height: auto;
     max-width: 140px;
+  }
+
+  main.container {
+    width: calc(100% - 40px); /* 左右20px余白 */
   }
 }
