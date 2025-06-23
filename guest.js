@@ -33,6 +33,11 @@ fetch('guests.json')
         img.src = `memories/${id}.jpg`;
         img.alt = `Memory ${id}`;
 
+        // Remove the slide if the image fails to load
+        img.onerror = () => {
+          slide.remove();
+        };
+
         slide.appendChild(img);
         wrapper.appendChild(slide);
       });
@@ -64,6 +69,11 @@ fetch('guests.json')
         const img = document.createElement('img');
         img.src = path;
         img.alt = `イラスト${index + 1}`;
+
+        // Optionally remove broken portrait thumbnails too
+        img.onerror = () => {
+          link.remove();
+        };
 
         link.appendChild(img);
         container.appendChild(link);
