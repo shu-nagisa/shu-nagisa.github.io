@@ -29,7 +29,6 @@ h1 {
 h2 {
   font-size: 1.2rem;
   color: #566a70;
-  border-bottom: 2px solid #566a70;
   padding-bottom: 4px;
   margin-top: 2em;
   margin-bottom: 0.5em;
@@ -47,10 +46,8 @@ h2 {
   font-weight: bold;
   color: #566a70;
   text-align: center;
-  margin-top: 2em;
+  margin-top: 2.5em;
   margin-bottom: 0.5em;
-  border-bottom: 2px solid #566a70;
-  display: inline-block;
 }
 
 .section-description {
@@ -58,7 +55,7 @@ h2 {
   text-align: center;
   padding: 0 1em;
   line-height: 1.6;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 }
 
 .swiper {
@@ -143,19 +140,26 @@ footer .sub-info {
 @media (max-width: 500px) {
   .swiper-slide {
     width: 90%;
-    height: auto;
-  }
-
-  .thumbnails img {
-    width: 100px;
-    height: 100px;
+    height: 320px;
   }
 
   .section-title {
     font-size: 1rem;
+    margin-top: 45px;
   }
 
   .section-description {
     font-size: 0.85rem;
+  }
+
+  .thumbnails {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .thumbnails img {
+    width: 45%;
+    height: auto;
+    max-width: 120px;
   }
 }
