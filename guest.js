@@ -20,7 +20,7 @@ fetch('guests.json')
       return;
     }
 
-    document.getElementById('guestName').textContent = guest.name + ' 様';
+    document.getElementById('guestName').textContent = guest.name + ' へ';
     document.getElementById('guestMessage').textContent = guest.message;
 
     if (Array.isArray(guest.memories)) {
