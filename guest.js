@@ -32,10 +32,6 @@ fetch('guests.json')
         const img = document.createElement('img');
         img.src = `memories/${id}.jpg`;
         img.alt = `Memory ${id}`;
-        img.onerror = () => {
-          img.src = 'memories/fallback.jpg';
-          img.alt = '画像を読み込めませんでした';
-        };
 
         slide.appendChild(img);
         wrapper.appendChild(slide);
