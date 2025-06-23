@@ -10,79 +10,124 @@
       margin: 0;
       font-family: 'Noto Serif JP', serif;
       background-color: #faf7ef;
-      background-image: url("https://www.transparenttextures.com/patterns/beige-paper.png");
+      background-image: url('texture.png');
+      background-size: cover;
       background-repeat: repeat;
-      color: #545454;
+      background-position: center;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
       min-height: 100vh;
+      color: #545454;
+      padding: 0 20px;
+    }
+
+    main.container {
+      width: 100%;
+      max-width: 600px;
+      box-sizing: border-box;
+      background-color: #ffffff;
+      border: 3px solid #5ec4d6;
+      border-radius: 12px;
+      margin-top: 40px;
+      margin-bottom: 45px;
+      padding: 40px 24px;
+      position: relative;
+    }
+
+    main.container::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: url('texture.png');
+      background-size: cover;
+      background-repeat: repeat;
+      background-position: center;
+      opacity: 0.1;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    main.container > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      color: #566a70;
+      margin: 0 0 1em;
       text-align: center;
     }
-    .container {
-      max-width: 600px;
-      width: 100%;
-      padding: 40px 20px;
-      box-sizing: border-box;
-    }
-    h1 {
-      font-size: 1.8em;
-      color: #566a70;
-      margin-bottom: 20px;
-    }
+
     p {
-      font-size: 1em;
-      margin-bottom: 20px;
+      font-size: 1rem;
+      margin-bottom: 1.5em;
+      text-align: center;
+      line-height: 1.6;
     }
+
     input[type="text"] {
-      font-size: 1em;
+      font-size: 1rem;
       padding: 10px;
       width: 80%;
       max-width: 300px;
       border: 1px solid #ccc;
       border-radius: 4px;
-      margin-bottom: 20px;
+      margin-bottom: 1.5em;
     }
+
     button {
       background-color: #566a70;
       color: #fff;
       border: none;
-      padding: 10px 20px;
-      font-size: 1em;
+      padding: 10px 24px;
+      font-size: 1rem;
       border-radius: 4px;
       cursor: pointer;
     }
+
     #error {
       color: red;
-      margin-top: 10px;
+      margin-top: 1em;
+      text-align: center;
     }
+
     footer {
-      margin-top: 40px;
-      padding: 20px;
       background-color: #566a70;
       color: #faf7ef;
-      font-size: 0.9em;
-      line-height: 1.6;
+      text-align: center;
+      padding: 1.5em 1em;
+      width: 100%;
     }
+
     footer .main-title {
-      font-size: 1.2em;
+      font-size: 1.1rem;
       font-weight: bold;
+      margin-bottom: 0.3em;
     }
+
     footer .sub-info {
-      font-size: 0.85em;
-      margin-top: 5px;
+      font-size: 0.85rem;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 500px) {
+      main.container {
+        width: calc(100% - 40px);
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <main class="container">
     <h1>ようこそ</h1>
     <p>ご自身の生年月日（8桁）を入力してください</p>
     <input type="text" id="dob" placeholder="例：19900101" maxlength="8">
     <br>
     <button onclick="authenticate()">認証する</button>
     <p id="error"></p>
-  </div>
+  </main>
 
   <footer>
     <div class="main-title">S＆N WEDDING PARTY</div>
