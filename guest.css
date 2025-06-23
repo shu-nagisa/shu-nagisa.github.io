@@ -1,7 +1,3 @@
-from pathlib import Path
-
-# 最新のCSSを作成
-latest_css = """
 body {
   background-color: #faf7ef;
   font-family: 'Noto Serif JP', serif;
@@ -21,7 +17,7 @@ main.container {
   background-color: #ffffff;
   border: 3px solid #5ec4d6;
   border-radius: 12px;
-  margin: 25px auto 45px; /* 上部に25px追加 */
+  margin-bottom: 45px;
   background-image: url('texture.png');
   background-size: cover;
   background-repeat: repeat;
@@ -174,10 +170,5 @@ footer .sub-info {
     width: 100%;
     height: auto;
     max-width: 140px;
-  }
-
-  main.container {
-    margin-left: 5px;
-    margin-right: 5px;
   }
 }
