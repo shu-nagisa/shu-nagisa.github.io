@@ -10,16 +10,26 @@
       margin: 0;
       font-family: 'Noto Serif JP', serif;
       background-color: #faf7ef;
-      background-image: url('texture.png');
-      background-size: cover;
-      background-repeat: repeat;
-      background-position: center;
+      color: #545454;
       display: flex;
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
-      color: #545454;
       padding: 0 20px;
+      position: relative;
+    }
+
+    /* 背景画像（上合わせ・800px幅・10%透過） */
+    .background-image {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      max-width: 100%;
+      opacity: 0.1;
+      z-index: 0;
+      pointer-events: none;
     }
 
     main.container {
@@ -33,6 +43,7 @@
       margin-bottom: 45px;
       padding: 40px 24px;
       position: relative;
+      z-index: 1;
     }
 
     main.container::before {
@@ -99,6 +110,7 @@
       text-align: center;
       padding: 1.5em 1em;
       width: 100%;
+      z-index: 1;
     }
 
     footer .main-title {
@@ -120,6 +132,8 @@
   </style>
 </head>
 <body>
+  <img src="img01.jpg" alt="背景画像" class="background-image">
+
   <main class="container">
     <h1>ようこそ</h1>
     <p>ご自身の生年月日（8桁）を入力してください</p>
