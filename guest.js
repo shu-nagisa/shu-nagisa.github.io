@@ -20,7 +20,7 @@ fetch('guests.json')
       return;
     }
 
-    document.getElementById('guestName').textContent = guest.name + ' へ';
+    document.getElementById('guestName').textContent = guest.name + '';
     document.getElementById('guestMessage').textContent = guest.message;
 
     // スライダー画像
