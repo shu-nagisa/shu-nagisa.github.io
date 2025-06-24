@@ -17,16 +17,6 @@
       align-items: center;
     }
 
-    .background-img {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 800px;
-      height: auto;
-      opacity: 0.1;
-      z-index: 0;
-    }
-
     .container {
       position: relative;
       z-index: 1;
@@ -42,6 +32,7 @@
       background-size: cover;
       background-repeat: repeat;
       background-position: center;
+      opacity: 0.1; /* 背景画像の透明度10% */
     }
 
     .container::before {
@@ -74,6 +65,12 @@
       font-size: 1em;
       margin-bottom: 20px;
       text-align: center;
+    }
+
+    #sisa-img {
+      display: block;
+      margin: 0 auto 15px; /* シーサー画像とテキストの間に15pxの余白を追加 */
+      width: 150px; /* 横幅150px */
     }
 
     input[type="text"] {
@@ -140,9 +137,10 @@
   </style>
 </head>
 <body>
-  <img src="img01.jpg" alt="背景画像" class="background-img">
-
   <div class="container">
+    <!-- シーサー画像を追加 -->
+    <img src="img_sisa.png" alt="シーサー" id="sisa-img">
+
     <h1>ようこそ</h1>
     <p>ご自身の生年月日（8桁）を入力してください</p>
     <input type="text" id="dob" placeholder="例：19900101" maxlength="8">
