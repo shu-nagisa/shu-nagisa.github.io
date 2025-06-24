@@ -166,7 +166,7 @@ footer {
   color: #faf7ef;
   text-align: center;
   padding: 1.5em 1em;
-  width: 105%;
+  width: 100%;
 }
 
 footer .main-title {
@@ -211,6 +211,6 @@ footer .sub-info {
   }
 
   main.container {
-    width: calc(100% - 40px); /* 左右20px余白 */
+    width: calc(100% - 30px); /* 左右20px余白 */
   }
 }
