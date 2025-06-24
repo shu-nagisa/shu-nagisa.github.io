@@ -24,11 +24,11 @@
       width: 100%;
       padding: 40px 20px;
       margin-top: 40px;
-      background-color: #fff;
+      background-color: transparent; /* 背景色を透明に変更 */
       border: 3px solid #5ec4d6;
       border-radius: 12px;
       box-sizing: border-box;
-      overflow: hidden; /* 角アール内に画像を収める */
+      overflow: hidden;
     }
 
     .texture-background {
@@ -123,6 +123,7 @@
     }
 
     @media (max-width: 500px) {
+      /* スマホ時に角アール外側に左右15pxの余白を追加 */
       .container {
         margin-left: 15px;
         margin-right: 15px;
