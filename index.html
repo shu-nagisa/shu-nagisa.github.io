@@ -17,20 +17,6 @@
       align-items: center;
     }
 
-    .background-img {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      opacity: 0.1; /* texture.pngの透明度10% */
-      background-image: url('texture.png');
-      background-size: cover;
-      background-repeat: repeat;
-      background-position: center;
-    }
-
     .container {
       position: relative;
       z-index: 1;
@@ -42,6 +28,21 @@
       border: 3px solid #5ec4d6;
       border-radius: 12px;
       box-sizing: border-box;
+      overflow: hidden; /* 角アール内に画像を収める */
+    }
+
+    .texture-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('texture.png');
+      background-size: cover;
+      background-repeat: repeat;
+      background-position: center;
+      opacity: 0.1; /* texture.pngの透明度10% */
+      z-index: -1;
     }
 
     .container > * {
@@ -65,7 +66,7 @@
     #sisa-img {
       display: block;
       margin: 0 auto 15px; /* シーサー画像とテキストの間に15pxの余白を追加 */
-      width: 150px; /* 横幅150px */
+      width: 100px; /* 横幅100px */
     }
 
     input[type="text"] {
@@ -137,9 +138,11 @@
   </style>
 </head>
 <body>
-  <div class="background-img"></div> <!-- 背景画像を最背面に設定 -->
 
   <div class="container">
+    <!-- texture.pngを角アール内に設定 -->
+    <div class="texture-background"></div>
+
     <!-- シーサー画像を追加 -->
     <img src="img_sisa.png" alt="シーサー" id="sisa-img">
 
