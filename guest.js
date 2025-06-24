@@ -23,6 +23,7 @@ fetch('guests.json')
     document.getElementById('guestName').textContent = guest.name + ' へ';
     document.getElementById('guestMessage').textContent = guest.message;
 
+    // スライダー画像
     if (Array.isArray(guest.memories)) {
       const wrapper = document.querySelector('.swiper-wrapper');
       guest.memories.forEach(id => {
@@ -32,7 +33,9 @@ fetch('guests.json')
         const img = document.createElement('img');
         img.src = `memories/${id}.jpg`;
         img.alt = `Memory ${id}`;
-        img.onerror = () => { slide.remove(); };
+        img.onerror = () => {
+          slide.remove();
+        };
 
         slide.appendChild(img);
         wrapper.appendChild(slide);
@@ -54,6 +57,7 @@ fetch('guests.json')
       });
     }
 
+    // イラスト画像
     if (Array.isArray(guest.portraits)) {
       const container = document.querySelector('.thumbnails');
       guest.portraits.forEach((path, index) => {
@@ -65,7 +69,9 @@ fetch('guests.json')
         const img = document.createElement('img');
         img.src = path;
         img.alt = `イラスト${index + 1}`;
-        img.onerror = () => { link.remove(); };
+        img.onerror = () => {
+          link.remove();
+        };
 
         link.appendChild(img);
         container.appendChild(link);
@@ -76,24 +82,3 @@ fetch('guests.json')
     console.error('ゲスト情報の読み込みに失敗しました:', error);
     showGuestNotFound();
   });
-
-// 花火アニメーションループ
-function launchFireworks() {
-  const container = document.getElementById('fireworkContainer');
-  setInterval(() => {
-    const firework = document.createElement('div');
-    firework.className = 'firework';
-    firework.style.left = Math.random() * window.innerWidth + 'px';
-    firework.style.top = Math.random() * window.innerHeight + 'px';
-    firework.style.background = `hsl(${Math.random() * 360}, 100%, 70%)`;
-    firework.style.animationDuration = (1 + Math.random()).toFixed(1) + 's';
-
-    container.appendChild(firework);
-
-    setTimeout(() => {
-      firework.remove();
-    }, 1500);
-  }, 300);
-}
-
-launchFireworks();
