@@ -1,45 +1,53 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>認証ページ</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap" rel="stylesheet">
   <style>
-    html, body {
+    body {
       margin: 0;
-      padding: 0;
       font-family: 'Noto Serif JP', serif;
       background-color: #faf7ef;
       color: #545454;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       min-height: 100vh;
-      position: relative;
-    }
-
-    body::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 800px;
-      height: auto;
-      background-image: url('img01.jpg');
-      background-repeat: no-repeat;
-      background-position: top center;
-      background-size: contain;
-      opacity: 0.1;
-      z-index: 0;
-      pointer-events: none;
+      text-align: center;
     }
 
     .container {
       position: relative;
-      z-index: 1;
       max-width: 600px;
-      margin: 0 auto;
-      padding: 80px 20px 120px;
-      text-align: center;
+      width: 100%;
+      padding: 40px 20px;
+      box-sizing: border-box;
+      background-color: #fff;
+      border: 3px solid #5ec4d6;
+      border-radius: 12px;
+      z-index: 0;
+    }
+
+    /* テクスチャ背景（透過） */
+    .container::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: url("texture.png");
+      background-repeat: repeat;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.1;
+      border-radius: 12px;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .container > * {
+      position: relative;
+      z-index: 1;
     }
 
     h1 {
@@ -79,15 +87,13 @@
     }
 
     footer {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
+      margin-top: 40px;
+      padding: 20px;
       background-color: #566a70;
       color: #faf7ef;
       font-size: 0.9em;
-      text-align: center;
-      padding: 20px 1em;
+      line-height: 1.6;
+      width: 100%;
     }
 
     footer .main-title {
@@ -100,9 +106,12 @@
       margin-top: 5px;
     }
 
-    @media (min-height: 700px) {
+    @media (max-width: 500px) {
       footer {
         position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
       }
     }
   </style>
