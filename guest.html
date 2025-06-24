@@ -1,49 +1,35 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ゲストページ</title>
-  <!-- Google Fonts（明朝体） -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap" rel="stylesheet">
-  <!-- Swiper CSS（スライダー） -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-  <!-- 外部CSS -->
-  <link rel="stylesheet" href="guest.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="guest.css" />
 </head>
 <body>
-  <!-- 花火アニメーション用の親要素 -->
-  <div id="fireworks-container"></div>
+  <!-- 花火アニメーション -->
+  <div class="fireworks-container" id="fireworks"></div>
 
   <main class="container">
-    <!-- ゲスト名 -->
     <h1 id="guestName"></h1>
-
-    <!-- メッセージ -->
     <p id="guestMessage"></p>
 
-    <!-- メモリー写真スライダー -->
     <div class="swiper">
-      <div class="swiper-wrapper">
-        <!-- JSで画像を挿入 -->
-      </div>
+      <div class="swiper-wrapper"></div>
       <div class="swiper-pagination"></div>
     </div>
 
-    <!-- イラストダウンロードセクション -->
     <div class="section-title">イラスト画像ダウンロード</div>
     <div class="section-description">
       席次表に掲載のイラスト画像をダウンロードいただけます<br>
       画像を長押しし「画像を保存」を選択してください
     </div>
 
-    <!-- イラストサムネイル -->
-    <div class="thumbnails">
-      <!-- JSで挿入 -->
-    </div>
+    <div class="thumbnails"></div>
   </main>
 
-  <!-- フッター -->
   <footer>
     <div class="main-title">S＆N WEDDING PARTY</div>
     <div class="sub-info">27 June, 2025</div>
@@ -51,9 +37,7 @@
     <div class="sub-info">Hyatt Regency Seragaki Island, Okinawa</div>
   </footer>
 
-  <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-  <!-- 外部JS -->
   <script src="guest.js"></script>
 </body>
 </html>
