@@ -31,8 +31,8 @@ fetch('guests.json')
         slide.className = 'swiper-slide';
 
         const img = document.createElement('img');
-        img.src = memories/${id}.jpg;
-        img.alt = Memory ${id};
+        img.src = `memories/${id}.jpg`;  // 修正: バックティックを使用
+        img.alt = `Memory ${id}`;  // 修正: バックティックを使用
         img.onerror = () => {
           slide.remove();
         };
@@ -64,11 +64,11 @@ fetch('guests.json')
         const link = document.createElement('a');
         link.href = path;
         link.download = path.split('/').pop();
-        link.setAttribute('aria-label', イラスト${index + 1}をダウンロード);
+        link.setAttribute('aria-label', `イラスト${index + 1}をダウンロード`);  // 修正: バックティックを使用
 
         const img = document.createElement('img');
         img.src = path;
-        img.alt = イラスト${index + 1};
+        img.alt = `イラスト${index + 1}`;  // 修正: バックティックを使用
         img.onerror = () => {
           link.remove();
         };
