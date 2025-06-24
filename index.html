@@ -22,7 +22,7 @@
       z-index: 1;
       max-width: 600px;
       width: auto; /* SP時に100%は不要 */
-      padding: 40px 20px;
+      padding: 20px 20px;
       margin-top: 40px;
       background-color: transparent;
       border: 3px solid #5ec4d6;
@@ -177,11 +177,11 @@
           if (guest) {
             window.location.href = `guest.html?dob=${dob}`;
           } else {
-            errorEl.textContent = '該当するゲストが見つかりませんでした。';
+            errorEl.textContent = '該当するゲストが見つかりませんでした';
           }
         })
         .catch(() => {
-          errorEl.textContent = 'データの読み込みに失敗しました。';
+          errorEl.textContent = 'データの読み込みに失敗しました';
         });
     }
   </script>
