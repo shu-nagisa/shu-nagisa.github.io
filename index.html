@@ -21,16 +21,14 @@
       position: relative;
       z-index: 1;
       max-width: 600px;
-      width: 100%;
+      width: auto; /* SP時に100%は不要 */
       padding: 40px 20px;
       margin-top: 40px;
-      background-color: transparent; /* 背景色を透明に変更 */
+      background-color: transparent;
       border: 3px solid #5ec4d6;
       border-radius: 12px;
       box-sizing: border-box;
       overflow: hidden;
-      margin-left: 15px;  /* 外側に15pxの余白を追加 */
-      margin-right: 15px; /* 外側に15pxの余白を追加 */
     }
 
     .texture-background {
@@ -39,12 +37,12 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background-image: url('texture.png');
+      background-image: url('texture.png'); /* 画像が表示されるように修正 */
       background-size: cover;
       background-repeat: repeat;
       background-position: center;
-      opacity: 0.1; /* texture.pngの透明度10% */
-      z-index: -1; /* 背景として最背面に設定 */
+      opacity: 0.1;
+      z-index: -1; /* 最背面に配置 */
     }
 
     .container > * {
@@ -125,7 +123,6 @@
     }
 
     @media (max-width: 500px) {
-      /* スマホ時に角アール外側に左右15pxの余白を追加 */
       .container {
         margin-left: 15px;
         margin-right: 15px;
