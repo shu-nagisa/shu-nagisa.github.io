@@ -29,6 +29,8 @@
       border-radius: 12px;
       box-sizing: border-box;
       overflow: hidden;
+      margin-left: 15px;  /* 外側に15pxの余白を追加 */
+      margin-right: 15px; /* 外側に15pxの余白を追加 */
     }
 
     .texture-background {
@@ -42,7 +44,7 @@
       background-repeat: repeat;
       background-position: center;
       opacity: 0.1; /* texture.pngの透明度10% */
-      z-index: -1;
+      z-index: -1; /* 背景として最背面に設定 */
     }
 
     .container > * {
