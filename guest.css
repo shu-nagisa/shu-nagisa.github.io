@@ -36,7 +36,7 @@ main.container::before {
   background-size: cover;
   background-repeat: repeat;
   background-position: center;
-  opacity: 0.1;
+  opacity: 0.05; /* ← 透明度5%に変更 */
   z-index: 0;
   pointer-events: none;
 }
