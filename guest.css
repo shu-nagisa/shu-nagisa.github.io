@@ -7,27 +7,19 @@ body {
   align-items: center;
   max-width: 600px;
   margin: 0 auto;
-  padding-bottom: 0;
 }
 
-/* メインボックス */
 main.container {
   padding: 25px 21px 45px;
   width: 100%;
-  box-sizing: border-box;
   background-color: #ffffff;
   border: 3px solid #5ec4d6;
   border-radius: 12px;
   margin-top: 25px;
   margin-bottom: 45px;
-  background-image: url('texture.png');
-  background-size: cover;
-  background-repeat: repeat;
-  background-position: center;
   position: relative;
 }
 
-/* テクスチャの透過レイヤー */
 main.container::before {
   content: '';
   position: absolute;
@@ -36,12 +28,12 @@ main.container::before {
   background-size: cover;
   background-repeat: repeat;
   background-position: center;
-  opacity: 0.05; /* ← 透明度5%に変更 */
+  opacity: 0.05;
   z-index: 0;
   pointer-events: none;
+  border-radius: 12px;
 }
 
-/* テクスチャ上に載せる要素 */
 main.container > * {
   position: relative;
   z-index: 1;
@@ -49,34 +41,11 @@ main.container > * {
 
 h1, h2, p {
   text-align: center;
-  margin: 1em 0;
 }
 
-h1 {
-  margin-top: 0;
-  font-size: 1.5rem;
-  color: #566a70;
-}
-
-h2 {
-  font-size: 1.2rem;
-  color: #566a70;
-  padding-bottom: 4px;
-  margin-top: 2em;
-  margin-bottom: 0.5em;
-}
-
-#guestMessage {
-  white-space: pre-line;
-  padding: 0 1em;
-  line-height: 1.6;
-  font-size: 1rem;
-}
-
-/* セクションタイトル */
 .section-title {
-  font-size: 1.1rem;
   font-weight: bold;
+  font-size: 1.1rem;
   color: #5ec4d6;
   text-align: center;
   margin-top: 2.5em;
@@ -87,12 +56,9 @@ h2 {
 .section-description {
   font-size: 0.95rem;
   text-align: center;
-  padding: 0 1em;
-  line-height: 1.6;
   margin-bottom: 2em;
 }
 
-/* スライダー */
 .swiper {
   width: 100%;
   max-width: 600px;
@@ -129,7 +95,6 @@ h2 {
   border: 2px solid #e0e0e0;
 }
 
-/* サムネイル（PCは4列） */
 .thumbnails {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -140,7 +105,6 @@ h2 {
   max-width: 100%;
 }
 
-/* 背景ボックス付きのイラスト */
 .thumbnails a {
   background-color: #ffffff;
   padding: 8px;
@@ -164,57 +128,29 @@ h2 {
   transform: scale(1.05);
 }
 
-/* フッター */
+.fireworks-container {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: transparent;
+  z-index: 9999;
+  pointer-events: none;
+  animation: fadeOut 3s forwards;
+  background-image: radial-gradient(circle, #ffcc00 2px, transparent 2px),
+                    radial-gradient(circle, #ff66cc 2px, transparent 2px),
+                    radial-gradient(circle, #66ccff 2px, transparent 2px);
+  background-size: 80px 80px;
+  background-position: center;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; display: none; }
+}
+
 footer {
   background-color: #566a70;
   color: #faf7ef;
   text-align: center;
   padding: 1.5em 1em;
   width: 100%;
-}
-
-footer .main-title {
-  font-size: 1.1rem;
-  font-weight: bold;
-  margin-bottom: 0.3em;
-}
-
-footer .sub-info {
-  font-size: 0.85rem;
-  line-height: 1.4;
-}
-
-/* SPビュー調整 */
-@media (max-width: 500px) {
-  body {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  .swiper-slide {
-    width: 90%;
-    height: 320px;
-  }
-
-  .section-title {
-    font-size: 1rem;
-    margin-top: 45px;
-  }
-
-  .section-description {
-    font-size: 0.85rem;
-  }
-
-  .thumbnails {
-    grid-template-columns: 1fr 1fr;
-    gap: 16px 12px;
-  }
-
-  .thumbnails img {
-    max-width: 140px;
-  }
-
-  main.container {
-    width: calc(100% - 40px); /* 左右20px余白 */
-  }
 }
