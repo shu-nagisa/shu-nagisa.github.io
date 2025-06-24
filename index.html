@@ -17,6 +17,20 @@
       align-items: center;
     }
 
+    .background-img {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.1; /* texture.pngの透明度10% */
+      background-image: url('texture.png');
+      background-size: cover;
+      background-repeat: repeat;
+      background-position: center;
+    }
+
     .container {
       position: relative;
       z-index: 1;
@@ -28,25 +42,6 @@
       border: 3px solid #5ec4d6;
       border-radius: 12px;
       box-sizing: border-box;
-      background-image: url('texture.png');
-      background-size: cover;
-      background-repeat: repeat;
-      background-position: center;
-      opacity: 0.1; /* 背景画像の透明度10% */
-    }
-
-    .container::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background-image: url('texture.png');
-      background-size: cover;
-      background-repeat: repeat;
-      background-position: center;
-      opacity: 0.1;
-      z-index: 0;
-      pointer-events: none;
-      border-radius: 12px;
     }
 
     .container > * {
@@ -127,6 +122,11 @@
     }
 
     @media (max-width: 500px) {
+      .container {
+        margin-left: 15px;
+        margin-right: 15px;
+      }
+
       footer {
         position: fixed;
         bottom: 0;
@@ -137,6 +137,8 @@
   </style>
 </head>
 <body>
+  <div class="background-img"></div> <!-- 背景画像を最背面に設定 -->
+
   <div class="container">
     <!-- シーサー画像を追加 -->
     <img src="img_sisa.png" alt="シーサー" id="sisa-img">
