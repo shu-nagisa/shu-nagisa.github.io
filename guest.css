@@ -9,6 +9,7 @@ body {
   margin: 0;
   padding: 0 15px;
   box-sizing: border-box;
+  justify-content: center;
 }
 
 /* メインボックス */
@@ -174,6 +175,7 @@ footer {
   text-align: center;
   padding: 1.5em 1em;
   width: 100%;
+  max-width: 600px;
   position: static;
   margin-top: 2em;
 }
