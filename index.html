@@ -147,9 +147,9 @@
     <img src="img_sisa.png" alt="シーサー" id="sisa-img">
 
     <h1>Welcome</h1>
-    <p>生年月日（8桁）を入力してください</p>
+    <p>生年月日（8桁）を入力してね</p>
     <input type="text" id="dob" placeholder="例：19900101" maxlength="8">
-    <button onclick="authenticate()">認証する</button>
+    <button onclick="authenticate()">次に進む</button>
     <p id="error"></p>
   </div>
 
@@ -166,7 +166,7 @@
       const errorEl = document.getElementById('error');
 
       if (!/^\d{8}$/.test(dob)) {
-        errorEl.textContent = '正しい8桁の生年月日を入力してください。';
+        errorEl.textContent = '生年月日が正しいか再度確認してみてね';
         return;
       }
 
@@ -177,7 +177,7 @@
           if (guest) {
             window.location.href = `guest.html?dob=${dob}`;
           } else {
-            errorEl.textContent = '該当するゲストが見つかりませんでした';
+            errorEl.textContent = '生年月日が正しいか再度確認してみてね';
           }
         })
         .catch(() => {
