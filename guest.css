@@ -34,7 +34,7 @@ main.container > * {
 /* Thankyou画像 */
 #thankyouImage {
   display: block;
-  margin: 0 auto 10px; /* 中央寄せ＋下余白 */
+  margin:auto; /* 中央寄せ＋下余白 */
   height: 50px;
   object-fit: contain;
 }
