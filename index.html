@@ -9,26 +9,26 @@
     body {
       margin: 0;
       font-family: 'Noto Serif JP', serif;
-      background-color: #faf7ef;
-      color: #545454;
-      min-height: 100vh;
+      background-color: #f4f4f9; /* 淡いグレーの背景 */
+      color: #333;
       display: flex;
-      flex-direction: column;
+      justify-content: center;
       align-items: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
     }
 
     .container {
       position: relative;
-      z-index: 1;
-      max-width: 600px;
-      width: auto; /* SP時に100%は不要 */
-      padding: 20px 20px;
-      margin-top: 40px;
-      background-color: transparent;
-      border: 3px solid #5ec4d6;
-      border-radius: 12px;
+      max-width: 500px;
+      width: 100%;
+      background-color: #fff;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      border: 1px solid #ddd; /* 軽いボーダー */
+      border-radius: 8px; /* 角アールを少しつけてソフトな印象 */
       box-sizing: border-box;
-      overflow: hidden;
     }
 
     .texture-background {
@@ -37,102 +37,99 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background-image: url('texture.png'); /* 画像が表示されるように修正 */
+      background-image: url('texture.png');
       background-size: cover;
       background-repeat: repeat;
       background-position: center;
-      opacity: 0.1;
-      z-index: -1; /* 最背面に配置 */
-    }
-
-    .container > * {
-      position: relative;
-      z-index: 1;
+      opacity: 0.05;
+      z-index: -1;
     }
 
     h1 {
-      font-size: 1.8em;
-      color: #566a70;
-      margin-bottom: 20px;
-      text-align: center;
+      font-size: 2.2em;
+      color: #4A90E2; /* スタイリッシュな青色 */
+      margin-bottom: 30px;
+      font-weight: bold;
     }
 
     p {
-      font-size: 1em;
+      font-size: 1.1em;
       margin-bottom: 20px;
-      text-align: center;
+      color: #666;
     }
 
     #sisa-img {
       display: block;
-      margin: 0 auto 15px; /* シーサー画像とテキストの間に15pxの余白を追加 */
-      width: 100px; /* 横幅100px */
+      margin: 0 auto 25px;
+      width: 120px; /* シーサー画像のサイズ調整 */
     }
 
     input[type="text"] {
       font-size: 1em;
-      padding: 10px;
-      width: 80%;
-      max-width: 300px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      margin-bottom: 20px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
+      padding: 12px;
+      width: 100%;
+      max-width: 380px;
+      border: 1px solid #ddd;
+      border-radius: 30px;
+      margin-bottom: 30px;
+      box-sizing: border-box;
+      transition: all 0.3s ease-in-out;
+    }
+
+    input[type="text"]:focus {
+      border-color: #4A90E2;
+      outline: none;
+      box-shadow: 0 0 10px rgba(74, 144, 226, 0.3);
     }
 
     button {
-      background-color: #566a70;
+      background-color: #4A90E2;
       color: #fff;
       border: none;
-      padding: 10px 20px;
-      font-size: 1em;
-      border-radius: 4px;
+      padding: 12px 20px;
+      font-size: 1.1em;
+      border-radius: 30px;
       cursor: pointer;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
+      width: 100%;
+      max-width: 380px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    button:hover {
+      background-color: #357ABD; /* ホバー時の色変更 */
     }
 
     #error {
       color: red;
       margin-top: 10px;
-      text-align: center;
+      font-size: 1em;
     }
 
     footer {
-      background-color: #566a70;
-      color: #faf7ef;
-      text-align: center;
-      padding: 1.5em 1em;
-      width: 100%;
+      margin-top: 30px;
       font-size: 0.9em;
-      margin-top: auto;
+      color: #aaa;
     }
 
     footer .main-title {
-      font-size: 1.2em;
       font-weight: bold;
     }
 
     footer .sub-info {
-      font-size: 0.85em;
-      margin-top: 5px;
-      line-height: 1.4;
+      line-height: 1.6;
     }
 
     @media (max-width: 500px) {
-      .container {
-        margin-left: 15px;
-        margin-right: 15px;
+      body {
+        padding: 10px;
       }
 
-      footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
+      .container {
+        padding: 30px;
+      }
+
+      button {
+        font-size: 1em;
       }
     }
   </style>
@@ -140,16 +137,16 @@
 <body>
 
   <div class="container">
-    <!-- texture.pngを角アール内に設定 -->
+    <!-- texture.pngを背景として設定 -->
     <div class="texture-background"></div>
 
     <!-- シーサー画像を追加 -->
     <img src="img_sisa.png" alt="シーサー" id="sisa-img">
 
-    <h1>Welcome</h1>
+    <h1>ようこそ</h1>
     <p>生年月日（8桁）を入力してね</p>
     <input type="text" id="dob" placeholder="例：19900101" maxlength="8">
-    <button onclick="authenticate()">次に進む</button>
+    <button onclick="authenticate()">次の画面に進む</button>
     <p id="error"></p>
   </div>
 
@@ -181,7 +178,7 @@
           }
         })
         .catch(() => {
-          errorEl.textContent = 'データの読み込みに失敗しました';
+          errorEl.textContent = 'データの読み込みに失敗しました。';
         });
     }
   </script>
