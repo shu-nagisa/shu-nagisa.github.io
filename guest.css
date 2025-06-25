@@ -168,6 +168,7 @@ h2 {
 
 /* フッター */
 footer {
+  box-sizing: border-box;
   background-color: #566a70;
   color: #faf7ef;
   text-align: center;
