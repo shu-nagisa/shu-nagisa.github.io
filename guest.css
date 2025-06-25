@@ -5,18 +5,16 @@ body {
   color: #545454;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; /* フッターやmain.containerの中央揃えに影響 */
   margin: 0;
   box-sizing: border-box;
-  justify-content: center;
 }
 
 /* メインボックス */
 main.container {
   max-width: 600px;
   width: 100%;
-  padding: 45px;
-  padding: 0 15px;
+  padding: 45px 15px; /* padding重複を統合 */
   box-sizing: border-box;
   background-color: #ffffff;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -36,8 +34,7 @@ main.container > * {
 /* Thankyou画像 */
 #thankyouImage {
   display: block;
-  margin-bottom: 0px;
-  margin: auto;
+  margin: 0 auto 10px; /* 中央寄せ＋下余白 */
   height: 50px;
   object-fit: contain;
 }
@@ -50,7 +47,7 @@ h1, h2, p {
 
 h1 {
   margin-top: 0;
-  margin-bottom: 0; /* ← 下余白を削除 */
+  margin-bottom: 0;
   font-size: 1.5rem;
   color: #566a70;
 }
@@ -65,7 +62,7 @@ h2 {
 
 #guestMessage {
   white-space: pre-line;
-  margin-top:3px;
+  margin-top: 3px;
   line-height: 1.6;
   font-size: 1rem;
 }
@@ -174,7 +171,8 @@ footer {
   color: #faf7ef;
   text-align: center;
   padding: 1.5em 1em;
-  width: 100%;
+  width: 100vw; /* 画面幅いっぱいに */
+  margin-left: calc(-1 * (100vw - 100%) / 2); /* 横はみ出しを補正 */
   position: static;
   margin-top: 2em;
 }
@@ -198,7 +196,7 @@ footer .sub-info {
 
   main.container {
     width: 100%;
-    padding: 25px;
+    padding: 25px 15px;
     margin-top: 20px;
     margin-bottom: 35px;
   }
