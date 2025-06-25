@@ -1,30 +1,29 @@
+/* 全体レイアウト */
 body {
   background-color: #faf7ef;
-  font-family: 'Noto Serif JP', serif;
+  font-family: 'Sawarabi　Mincho','Noto Serif JP', serif;
   color: #545454;
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 0 15px; /* SPでも左右に余白確保 */
+  margin: 0;
+  padding: 0 15px;
   box-sizing: border-box;
 }
 
 /* メインボックス */
 main.container {
-  padding: 25px 21px 45px;
+  max-width: 600px;
   width: 100%;
+  padding: 25px 21px 45px;
   box-sizing: border-box;
   background-color: #ffffff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* シャドウ追加 */
   margin-top: 25px;
   margin-bottom: 45px;
   position: relative;
   overflow: hidden;
-
-  /* ↓ 修正点: 枠線削除 + シャドウ追加 */
-  border: none;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: none; /* 枠線を削除 */
 }
 
 /* コンテンツ前面表示 */
@@ -33,34 +32,129 @@ main.container > * {
   z-index: 1;
 }
 
-/* スマホでも中央揃え維持のために調整 */
-@media (max-width: 500px) {
-  main.container {
-    width: 100%;
-  }
+/* 見出しとテキスト */
+h1, h2, p {
+  text-align: center;
+  margin: 1em 0;
+}
 
-  .swiper-slide {
-    width: 90%;
-    height: 320px;
-  }
+h1 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #566a70;
+}
 
-  .section-title {
-    font-size: 1rem;
-    margin-top: 45px;
-  }
+h2 {
+  font-size: 1.2rem;
+  color: #566a70;
+  padding-bottom: 4px;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+}
 
-  .section-description {
-    font-size: 0.85rem;
-  }
+#guestMessage {
+  white-space: pre-line;
+  line-height: 1.6;
+  font-size: 1rem;
+}
 
-  .thumbnails {
-    grid-template-columns: 1fr 1fr;
-    gap: 16px 12px;
-  }
+/* セクションタイトルと説明 */
+.section-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #566a70;
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  border-bottom: none;
+}
 
-  .thumbnails img {
-    max-width: 140px;
-  }
+.section-description {
+  font-size: 0.95rem;
+  text-align: center;
+  padding: 0 1em;
+  line-height: 1.6;
+  margin-bottom: 2em;
+}
+
+/* スライダー全体 */
+.swiper {
+  width: 100%;
+  max-width: 600px;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+/* スライダー内ラッパー */
+.swiper-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+/* スライド個別設定 */
+.swiper-slide {
+  flex-shrink: 0;
+  width: 90%;
+  max-width: 400px;
+  height: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+/* スライド画像 */
+.swiper-slide img {
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: none;
+}
+
+/* サムネイル一覧 */
+.thumbnails {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px 12px;
+  justify-items: center;
+  padding: 0 1em;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin: 2em auto;
+}
+
+/* サムネイルボックス */
+.thumbnails a {
+  background-color: #ffffff;
+  padding: 8px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  display: inline-block;
+}
+
+/* サムネイル画像 */
+.thumbnails img {
+  width: 100%;
+  max-width: 100px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  cursor: pointer;
+  display: block;
+  transition: transform 0.2s;
+}
+
+.thumbnails img:hover {
+  transform: scale(1.05);
 }
 
 /* フッター */
@@ -70,8 +164,8 @@ footer {
   text-align: center;
   padding: 1.5em 1em;
   width: 100%;
-  /* ↓ 吸着を無効化 */
-  position: static;
+  position: static; /* 吸着なし */
+  margin-top: 2em;
 }
 
 footer .main-title {
@@ -83,4 +177,42 @@ footer .main-title {
 footer .sub-info {
   font-size: 0.85rem;
   line-height: 1.4;
+}
+
+/* スマートフォンビュー対応 */
+@media (max-width: 500px) {
+  body {
+    padding: 0 10px;
+  }
+
+  main.container {
+    width: 100%;
+    padding: 20px 15px 35px;
+    margin-top: 20px;
+    margin-bottom: 35px;
+  }
+
+  .swiper-slide {
+    width: 100%;
+    height: 280px;
+  }
+
+  .section-title {
+    font-size: 1rem;
+    margin-top: 30px;
+  }
+
+  .section-description {
+    font-size: 0.85rem;
+    padding: 0 0.5em;
+  }
+
+  .thumbnails {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 10px;
+  }
+
+  .thumbnails img {
+    max-width: 100px;
+  }
 }
