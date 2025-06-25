@@ -17,6 +17,7 @@
       height: 100vh;
       padding: 20px;
       flex-direction: column;
+      box-sizing: border-box;
     }
 
     .container {
@@ -24,7 +25,7 @@
       max-width: 500px;
       width: 100%;
       background-color: #fff;
-      padding: 40px;
+      padding: 30px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       border: 1px solid #ddd;
       box-sizing: border-box;
@@ -51,8 +52,8 @@
 
     h1 {
       font-size: 2.2em;
-      color: #4A90E2; /* 青色に統一 */
-      margin-bottom: 20px;
+      color: #566a70; /* 青色に統一 */
+      margin-bottom: 10px;
       font-weight: bold;
       text-align: center;
     }
@@ -67,7 +68,7 @@
     #sisa-img {
       display: block;
       margin: 0 auto 25px;
-      width: 120px; /* シーサー画像のサイズ調整 */
+      width: 120px;
     }
 
     input[type="text"] {
@@ -82,17 +83,18 @@
     }
 
     input[type="text"]:focus {
-      border-color: #4A90E2;
+      border-color: #566a70; /* 青色に統一 */
       outline: none;
-      box-shadow: 0 0 10px rgba(74, 144, 226, 0.3);
+      box-shadow: 0 0 10px rgba(86, 106, 112, 0.3);
     }
 
     button {
-      background-color: #4A90E2; /* 青色に統一 */
+      background-color: #566a70; /* 青色に統一 */
       color: #fff;
       border: none;
       padding: 12px 20px;
       font-size: 1.1em;
+      border-radius: 30px;
       cursor: pointer;
       width: 100%;
       max-width: 380px;
@@ -100,7 +102,7 @@
     }
 
     button:hover {
-      background-color: #357ABD; /* ホバー時の色変更 */
+      background-color: #4a5e66;
     }
 
     #error {
@@ -112,27 +114,30 @@
     footer {
       margin-top: 30px;
       font-size: 0.9em;
-      color: #aaa;
+      color: #faf7ef;
       text-align: center;
-      position: absolute;
-      bottom: 10px;
-      width: 100%;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #566a70; /* フッター背景色 */
+      padding: 1.5em 1em;
     }
 
     footer .main-title {
+      font-size: 1.2em;
       font-weight: bold;
     }
 
     footer .sub-info {
-      line-height: 1.6;
+      font-size: 0.85em;
+      margin-top: 5px;
+      line-height: 1.4;
     }
 
     @media (max-width: 500px) {
       .container {
         padding: 30px;
-      }
-      button {
-        font-size: 1em;
       }
     }
   </style>
@@ -140,13 +145,11 @@
 <body>
 
   <div class="container">
-    <!-- texture.pngを背景として設定 -->
-    <div class="texture-background"></div>
+    <div class="texture-background"></div> <!-- texture.pngを背景として設定 -->
 
-    <!-- シーサー画像を追加 -->
     <img src="img_sisa.png" alt="シーサー" id="sisa-img">
 
-    <h1>Welcome</h1> <!-- 見出しを「Welcome」に変更 -->
+    <h1>Welcome</h1>
     <p>あなたの生年月日（8桁）を入力して、認証ボタンを押してね！</p>
     <input type="text" id="dob" placeholder="例：19900101" maxlength="8">
     <button onclick="authenticate()">認証する</button>
