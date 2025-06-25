@@ -29,6 +29,10 @@
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       border: 1px solid #ddd;
       box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 
     .texture-background {
@@ -120,24 +124,24 @@
       bottom: 0;
       left: 0;
       right: 0;
-      background-color: #566a70; /* フッター背景色 */
+      background-color: #566a70;
       padding: 1.5em 1em;
     }
 
     footer .main-title {
-      font-size: 1.2em;
       font-weight: bold;
     }
 
     footer .sub-info {
-      font-size: 0.85em;
-      margin-top: 5px;
-      line-height: 1.4;
+      line-height: 1.6;
     }
 
     @media (max-width: 500px) {
       .container {
         padding: 30px;
+      }
+      button {
+        font-size: 1em;
       }
     }
   </style>
