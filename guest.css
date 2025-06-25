@@ -16,8 +16,7 @@ main.container {
   width: 100%;
   box-sizing: border-box;
   background-color: #ffffff;
-  border: 3px solid #5ec4d6;
-  border-radius: 12px;
+  border: 3px solid #566a70;
   margin-top: 25px;
   margin-bottom: 45px;
   position: relative;
@@ -33,7 +32,7 @@ main.container::before {
   background-size: cover;
   background-repeat: repeat;
   background-position: center;
-  opacity: 0.1;
+  opacity: 0.05;
   z-index: 0;
   pointer-events: none;
 }
