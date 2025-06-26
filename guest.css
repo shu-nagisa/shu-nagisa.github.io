@@ -35,6 +35,7 @@ main.container > * {
 #thankyouImage {
   display: block;
   margin:auto; /* 中央寄せ＋下余白 */
+  image-rendering: -webkit-optimize-contrast; /* Safari対策 */
   height: 50px;
   width: auto;
   object-fit: contain;
